@@ -12,14 +12,15 @@ export class ChildComponent {
     up: "text-white bg-gradient-to-b from-blue-600 to-blue-800 shadow-lg shadow-blue-900",
     down: "text-black bg-blue-300 outline outline-1 shadow-none"
   };
-  btnStyles: string = `m-2 py-1 px-2 font-thin rounded-md ${this.clickStyles.up}`;
+
+  btnStyles: string = `${this.clickStyles.up}`;
 
   myMouseDown() {
-    this.btnStyles = `m-2 py-1 px-2 font-thin rounded-md ${this.clickStyles.down}`;
+    this.btnStyles = `${this.clickStyles.down}`;
   }
 
   myMouseUp() {
-    this.btnStyles = `m-2 py-1 px-2 font-thin rounded-md ${this.clickStyles.up}`;
+    this.btnStyles = `${this.clickStyles.up}`;
   }
 
   // eventEmitter and @Output()
