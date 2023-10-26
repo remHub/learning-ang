@@ -1,13 +1,17 @@
-<div class="flex flex-col h-screen w-full bg-slate-400">
-  <div
-    class="flex-shrink-0 m-5 bg-slate-600 rounded-lg outline outline-1 shadow-lg shadow-slate-600"
-  >
-    <h1 class="my-3 text-white text-3xl font-thin text-center">{{ title }}</h1>
+<div [class]="pageSetup[colorTheme].viewportContainer">
+  <div [class]="pageSetup[colorTheme].headerWrapper">
+    <h1 [class]="pageSetup[colorTheme].headerText" (click)="changeTheme()">
+      {{ title }}
+    </h1>
+    <div class=""></div>
   </div>
 
-  <div class="flex-grow">
-
-
-
+  <div [class]="pageSetup[colorTheme].bodyWrapper">
+    <div class="flex flex-row justify-center">
+      <!-- Template Variables use # as prefix -->
+      <input type="text" (keyup.enter)="myKeyup(userInput.value)" #userInput/>
+      
+    </div>
+    <p class="text-center">{{ keyPressed }}</p>
   </div>
 </div>
