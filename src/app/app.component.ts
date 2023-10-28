@@ -11,5 +11,8 @@ export class AppComponent {
   firstName: string = "";
   lastName: string = "";
   state: string  = "";
+  addBackground: boolean = false;
+
+  addSomeColor: string = "px-1 py-2 bg-blue-300 outline outline-1 rounded-md shadow-xl";
 
 }

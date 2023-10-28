@@ -38,15 +38,18 @@
           [(ngModel)]="state"
         />
       </div>
+      
+      <br /><br />
+      <input type="checkbox" name="" id="" [(ngModel)]="addBackground"/> 
+      <br /><br />
 
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between" [class]="addBackground ? addSomeColor : ''">
         <h1><span class="font-bold">First:</span> {{ firstName }}</h1>
 
         <h1><span class="font-bold">Last:</span> {{ lastName }}</h1>
 
         <h1><span class="font-bold">State:</span> {{ state }}</h1>
       </div>
-
     </div>
   </div>
 </div>
