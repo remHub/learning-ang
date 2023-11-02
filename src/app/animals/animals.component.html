@@ -1,0 +1,35 @@
+<div class="flex flex-col items-center">
+
+  <!-- Fields to add more object array elements -->
+  <div class="flex flex-col mb-2">
+    <label for="id">id</label>
+    <input id="id" type="text" #idOfToy />
+    <label for="toy">Toy</label>
+    <input id="toy" type="text" #toy />
+
+    <!-- Button to add object array element using template variable values from html input elements -->
+    <button
+      class="bg-red-600 text-white font-thin p-1 outline outline-1 outline-black ml-2 rounded-md m-2"
+      (click)="addToy({ id: idOfToy.value, data: toy.value })"
+    >
+      add toy
+    </button>
+  </div>
+
+  <ul>
+    <li
+      *ngFor="let toys of simpleArray; let indx = index"
+      class="flex flex-row justify-between mb-2"
+    >
+      ArrayIndex-{{indx}} {{ toys | json }}
+
+      <!-- Button to remove array element -->
+      <button
+        (click)="killArrayElement(indx)"
+        class="bg-red-600 text-white font-thin p-1 outline outline-1 outline-black ml-2 rounded-md"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>
