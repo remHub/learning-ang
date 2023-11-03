@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-animals',
-  templateUrl: './animals.component.html',
-  styleUrls: ['./animals.component.css']
+  selector: 'app-toys',
+  templateUrl: './toys.component.html',
+  styleUrls: ['./toys.component.css']
 })
-export class AnimalsComponent {
+export class ToysComponent {
 
   simpleArray: {id: number, data: string}[] = [
     {
