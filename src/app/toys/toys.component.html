@@ -8,15 +8,19 @@
 
     <!-- Button to add object array element using template variable values from html input elements -->
     <button
-      class="bg-red-600 text-white font-thin p-1 outline outline-1 outline-black ml-2 rounded-md m-2"
+      [class]="btnStylesAdd"
       (click)="addToy({ id: idOfToy.value, data: toy.value })"
     >
       add toy
     </button>
   </div>
 
-  <!-- import toy array -->
-  <div *ngIf = 'simpleArray.length > 0'>
+  <!-- ng-template is not a traditional html tag.  It will not display/markup data in the page -->
+
+  <!-- import toy array into toyList code block-->
+  <div *ngIf="simpleArray.length > 0; then toyList; else outOfStock"></div>
+
+  <ng-template #toyList>
     <ul>
       <li
         *ngFor="let toys of simpleArray; let indx = index"
@@ -25,17 +29,15 @@
         ArrayIndex-{{ indx }} {{ toys | json }}
 
         <!-- Button to remove array element -->
-        <button
-          (click)="killArrayElement(indx)"
-          class="bg-red-600 text-white font-thin p-1 outline outline-1 outline-black ml-2 rounded-md"
-        >
+        <button (click)="killArrayElement(indx)" [class]="btnStylesDlt">
           Delete
         </button>
       </li>
     </ul>
-  </div>
+  </ng-template>
 
-  <div *ngIf = 'simpleArray.length == 0'>
+  <!-- show if array is empty -->
+  <ng-template #outOfStock>
     <p>No toys in stock.</p>
-  </div>
+  </ng-template>
 </div>
