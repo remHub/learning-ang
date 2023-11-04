@@ -1,7 +1,8 @@
 <div class="absolute inset-0 flex flex-col items-center">
 
-  <h1
-    [ngClass] = "ngClassStyles[0]"
-  >ngClass Directive</h1>
+  <button
+    (click)="onClick()"
+    [ngClass] = "ngClassStyles[counter]"
+  >ngClass Directive</button>
 
 </div>
