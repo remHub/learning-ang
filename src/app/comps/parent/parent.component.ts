@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
-  messageToChildFromParent: string = `This is a message being sent the the child component from the parent conponent.`
+  messageToChildFromParent: string = `This is a message being sent to the child component from the parent conponent.`
 
 }
