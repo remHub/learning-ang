@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class SwitchCaseComponent {
 
   stepForm: string = "";
+  comps: string = "";
 
   /**
    * Styles
@@ -18,4 +19,7 @@ export class SwitchCaseComponent {
     this.stepForm = status;
   }
 
+  changeComp(newComp: string) {
+    this.comps = newComp;
+  }
 }

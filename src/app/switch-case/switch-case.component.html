@@ -6,6 +6,7 @@
     <button [class]="btnStyles" (click)="onClick('Step 3')">Step 3</button>
   </div>
 
+  <!-- switch html elements -->
   <div [ngSwitch]="stepForm">
     <div *ngSwitchCase="'Step 1'">Step 1 Form</div>
     <div *ngSwitchCase="'Step 2'">Step 2 Form</div>
@@ -13,4 +14,19 @@
     <div *ngSwitchDefault>Button not clicked</div>
   </div>
   
+
+<div>
+  <button [class]="btnStyles" (click)="changeComp('pics')">Pictures</button>
+  <button [class]="btnStyles" (click)="changeComp('docs')">Documentation</button>
+  <button [class]="btnStyles" (click)="changeComp('forms')">Forms</button>
+</div>
+
+  <!-- switch html elements -->
+  <div [ngSwitch]="comps">
+    <app-forms *ngSwitchCase="'forms'"></app-forms>
+    <app-documentation *ngSwitchCase="'docs'"></app-documentation>
+    <app-pictures *ngSwitchCase="'pics'"></app-pictures>
+    <div *ngSwitchDefault>Button not clicked</div>
+  </div>
+
 </div>
