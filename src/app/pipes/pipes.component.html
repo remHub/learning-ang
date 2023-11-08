@@ -1,0 +1,33 @@
+<div class="flex flex-col items-center">
+  <h1 class="font-thin text-3xl">{{ tutorial | uppercase }}</h1>
+
+  <h1 class="font-thin text-3xl">{{ count | number }}</h1>
+
+  <!-- digitCount.minDigitCount-maxDigitCount -->
+  <!-- numbers alway get rounded -->
+  <h1 class="font-thin text-3xl">{{ decValue | number : "2.2-2" }}</h1>
+
+  <!-- U.S. currency -->
+  <h1 class="font-thin text-3xl">{{ price | currency : "USD" }}</h1>
+
+  <!-- Euro currency -->
+  <h1 class="font-thin text-3xl">{{ price | currency : "EUR" }}</h1>
+
+  <!-- date and time -->
+  <h1 class="font-thin text-3xl">{{ today | date : "short" }}</h1>
+
+  <!-- just date -->
+  <h1 class="font-thin text-3xl">{{ today | date : "shortDate" }}</h1>
+
+  <!-- JSON -->
+  <h1 class="font-thin text-3xl">{{ myObject | json }}</h1>
+
+  <!-- percentage  -->
+  <h1 class="font-thin text-3xl">{{ 0.567 | percent }}</h1>
+
+  <!-- array slice  startIndex:endIndex -->
+  <h1 class="font-thin text-3xl">{{ simpleArray | slice : 2:4 }}</h1>
+
+
+
+</div>
