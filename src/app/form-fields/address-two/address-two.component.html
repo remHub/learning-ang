@@ -1,12 +1,12 @@
 <div [class]="lblStyles.fieldWrapper" (mouseenter)="userEnter()" (mouseleave)="userLeave()">
-  <label [class]="lblStyles.labelStyles" for="firstName">Last Name:</label>
+  <label [class]="lblStyles.labelStyles" for="addressTwo">Address 2:</label>
   <input
-    id="firstName"
+    id="addressTwo"
     [class]="lblStyles.inputBaseStyles"
     type="text"
     (focus)="elementFocus()"
     (blur)="elementBlur()"
-    #lastName
-    (keyup)="checkForContent(lastName.value)"
+    #addresstwo
+    (keyup)="checkForContent(addresstwo.value)"
   />
 </div>

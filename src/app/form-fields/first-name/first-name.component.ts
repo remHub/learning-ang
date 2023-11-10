@@ -27,4 +27,7 @@ export class FirstNameComponent {
     this.lblStyles.elementBlur();
   }
 
+  checkForContent(fieldContent: string) {
+    this.lblStyles.userInput(fieldContent);
+  }
 }

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { LabelStylesService } from 'src/app/label-styles.service';
 
 @Component({
-  selector: 'app-last-name',
-  templateUrl: './last-name.component.html',
-  styleUrls: ['./last-name.component.css'],
+  selector: 'app-address-one',
+  templateUrl: './address-one.component.html',
+  styleUrls: ['./address-one.component.css'],
   providers: [LabelStylesService]
 })
-export class LastNameComponent {
+export class AddressOneComponent {
 
   constructor(public lblStyles: LabelStylesService) {}
 
@@ -30,5 +30,4 @@ export class LastNameComponent {
   checkForContent(fieldContent: string) {
     this.lblStyles.userInput(fieldContent);
   }
-
 }
