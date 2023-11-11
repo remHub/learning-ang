@@ -19,7 +19,4 @@ export class ClassDirectiveComponent {
   onClick() {
     this.counter = this.counter >= 3 ? 0 : this.counter + 1;
   }
-
-
-
 }
