@@ -5,45 +5,27 @@
     <h1 class="my-3 text-white text-3xl font-thin text-center">{{ title }}</h1>
   </div>
 
-  <div class="flex-grow relative">
-    <div
-      class="absolute inset-0 flex flex-col items-center m-5 bg-slate-300 rounded-md outline outline-1 outline-slate-950 shadow-lg"
-    >
-      <div class="w-1/4 flex flex-col">
-        <label for="firstName">First Name</label>
-        <input
-          id="firstName"
-          class="focus:outline-none px-1 py-2 rounded-md border-b-4 border-slate-950"
-          type="text"
-          [(ngModel)]="firstName"
-        />
-      </div>
+  <div class="flex-grow">
 
-      <div class="w-1/4 flex flex-col">
-        <label for="lastName">Last Name</label>
-        <input
-          id="lastName"
-          class="focus:outline-none px-1 py-2 rounded-md border-b-4 border-slate-950"
-          type="text"
-          [(ngModel)]="lastName"
-        />
-      </div>
 
-      <div class="w-1/4 flex flex-col">
-        <label class="" for="state">State</label>
-        <input
-          id="state"
-          class="focus:outline-none px-1 py-2 rounded-md border-b-4 border-slate-950"
-          type="text"
-          [(ngModel)]="state"
-        />
-      </div>
-      
-      <br /><br />
-      <input type="checkbox" name="" id="" [(ngModel)]="addBackground"/> 
-      <br /><br />
+    <div class="flex flex-col items-center">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" [(ngModel)]="firstName" />
 
-      <div class="flex flex-col justify-between" [class]="addBackground ? addSomeColor : ''">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" [(ngModel)]="lastName" />
+
+      <label class="" for="state">State</label>
+      <input id="state" type="text" [(ngModel)]="state" />
+
+      <br />
+      <input type="checkbox" name="" id="" [(ngModel)]="addBackground" />
+      <br />
+
+      <div
+        class="flex flex-col justify-between"
+        [class]="addBackground ? addSomeColor : ''"
+      >
         <h1><span class="font-bold">First:</span> {{ firstName }}</h1>
 
         <h1><span class="font-bold">Last:</span> {{ lastName }}</h1>
@@ -51,5 +33,7 @@
         <h1><span class="font-bold">State:</span> {{ state }}</h1>
       </div>
     </div>
+
+    
   </div>
 </div>
