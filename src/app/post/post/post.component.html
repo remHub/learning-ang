@@ -1,0 +1,8 @@
+<button [class]="btnPrimary" (click)="addNewData()">Add New</button>
+
+<ul>
+  <li *ngFor="let post of posts; let i = index">
+    {{ i }} {{ post.postTitle }}
+    <button [class]="btnPrimary" (click)="removeData(i)">Delete</button>
+  </li>
+</ul>
