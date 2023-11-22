@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
+import { Post } from 'src/app/models/post'; // import interface Post to minimize human errors
 
 
 @Component({
@@ -21,8 +22,14 @@ export class PostComponent {
     this.btnPrimary = postService.btnPrimary;
   }
 
-  addNewData() {
-    let newPost = { id: 7, postTitle: 'Post 7'}
+  /**
+   * Set Post interface as type to minimize human errors
+   */
+  addData() {
+    let newPost: Post = { 
+      id: 7, postTitle: 'Post 7'
+    }
+    
     this.postService.addPost(newPost);
   }
 
