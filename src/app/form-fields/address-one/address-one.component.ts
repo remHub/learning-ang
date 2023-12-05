@@ -11,20 +11,8 @@ export class AddressOneComponent {
 
   constructor(public lblStyles: LabelStylesService) {}
 
-  userEnter() {
-    this.lblStyles.userEnter();
-  }
-
-  userLeave() {
-    this.lblStyles.userLeave();
-  }
-
-  elementFocus() {
-    this.lblStyles.elementFocus();
-  }
-
-  elementBlur() {
-    this.lblStyles.elementBlur();
+  moveText( vlue: number ) {
+    this.lblStyles.moveLabel(vlue);
   }
 
   checkForContent(fieldContent: string) {

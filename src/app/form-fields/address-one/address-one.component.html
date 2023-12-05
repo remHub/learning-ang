@@ -1,11 +1,11 @@
-<div [class]="lblStyles.fieldWrapper" (mouseenter)="userEnter()" (mouseleave)="userLeave()">
+<div class="fieldWrapper" (mouseenter)="moveText(1)" (mouseleave)="moveText(-1)">
   <label [class]="lblStyles.labelStyles" for="addressOne">Address 1:</label>
   <input
     id="addressOne"
-    [class]="lblStyles.inputBaseStyles"
+    class="inputBaseStyles"
     type="text"
-    (focus)="elementFocus()"
-    (blur)="elementBlur()"
+    (focus)="moveText(1)"
+    (blur)="moveText(-1)"
     #addressOne
     (keyup)="checkForContent(addressOne.value)"
   />

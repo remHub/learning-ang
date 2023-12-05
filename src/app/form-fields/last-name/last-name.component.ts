@@ -11,22 +11,10 @@ export class LastNameComponent {
 
   constructor(public lblStyles: LabelStylesService) {}
 
-  userEnter() {
-    this.lblStyles.userEnter();
+  moveText( vlue: number ) {
+    this.lblStyles.moveLabel(vlue);
   }
-
-  userLeave() {
-    this.lblStyles.userLeave();
-  }
-
-  elementFocus() {
-    this.lblStyles.elementFocus();
-  }
-
-  elementBlur() {
-    this.lblStyles.elementBlur();
-  }
-
+  
   checkForContent(fieldContent: string) {
     this.lblStyles.userInput(fieldContent);
   }
