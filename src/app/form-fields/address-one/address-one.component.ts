@@ -1,21 +1,14 @@
 import { Component } from '@angular/core';
-import { LabelStylesService } from 'src/app/label-styles.service';
+import { LabelAnimateService } from 'src/app/label-animate.service';
 
 @Component({
   selector: 'app-address-one',
   templateUrl: './address-one.component.html',
   styleUrls: ['./address-one.component.css'],
-  providers: [LabelStylesService]
+  providers: [LabelAnimateService]
 })
 export class AddressOneComponent {
 
-  constructor(public lblStyles: LabelStylesService) {}
+  constructor(public lblAnimate: LabelAnimateService) {}
 
-  moveText( vlue: number ) {
-    this.lblStyles.moveLabel(vlue);
-  }
-
-  checkForContent(fieldContent: string) {
-    this.lblStyles.userInput(fieldContent);
-  }
 }

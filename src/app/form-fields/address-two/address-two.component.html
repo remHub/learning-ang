@@ -1,12 +1,12 @@
-<div class="fieldWrapper" (mouseenter)="moveText(1)" (mouseleave)="moveText(-1)">
-  <label [class]="lblStyles.labelStyles" for="addressTwo">Address 2:</label>
+<div class="fieldWrapper" (mouseenter)="lblAnimate.moveLabel(1)" (mouseleave)="lblAnimate.moveLabel(-1)">
+  <label [class]="lblAnimate.labelAnimateCSS" for="addressTwo">Address 2:</label>
   <input
     id="addressTwo"
     class="inputBaseStyles"
     type="text"
-    (focus)="moveText(1)"
-    (blur)="moveText(-1)"
+    (focus)="lblAnimate.moveLabel(1)"
+    (blur)="lblAnimate.moveLabel(-1)"
     #addresstwo
-    (keyup)="checkForContent(addresstwo.value)"
+    (keyup)="lblAnimate.userInput(addresstwo.value)"
   />
 </div>

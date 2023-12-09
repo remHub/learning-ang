@@ -1,12 +1,12 @@
-<div class="fieldWrapper" (mouseenter)="moveText(1)" (mouseleave)="moveText(-1)">
-  <label [class]="lblStyles.labelStyles" for="firstName">First Name:</label>
+<div class="fieldWrapper" (mouseenter)="lblAnimate.moveLabel(1)" (mouseleave)="lblAnimate.moveLabel(-1)">
+  <label [class]="lblAnimate.labelAnimateCSS" for="firstName">First Name:</label>
   <input
     id="firstName"
     class="inputBaseStyles"
     type="text"
-    (focus)="moveText(1)"
-    (blur)="moveText(-1)"
+    (focus)="lblAnimate.moveLabel(1)"
+    (blur)="lblAnimate.moveLabel(-1)"
     #firstName
-    (keyup)="checkForContent(firstName.value)"
+    (keyup)="lblAnimate.userInput(firstName.value)"
   />
 </div>

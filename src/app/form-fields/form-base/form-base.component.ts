@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LabelStylesService } from 'src/app/label-styles.service';
+import { LabelAnimateService } from 'src/app/label-animate.service';
 
 @Component({
   selector: 'app-form-base',
@@ -8,6 +8,6 @@ import { LabelStylesService } from 'src/app/label-styles.service';
 })
 export class FormBaseComponent {
 
-  constructor(public lblStyles: LabelStylesService) { }
+  constructor(public lblAnimate: LabelAnimateService) { }
 
 }
