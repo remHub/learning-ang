@@ -7,12 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
+  // property used to rceive string from child then rendered in component template
   messageFromChild: string = "";
-
-  fromChild(msg: string) {
-
-    this.messageFromChild = msg;
-
-  }
 
 }
