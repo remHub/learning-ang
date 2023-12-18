@@ -1,0 +1,61 @@
+<!-- First Name -->
+<div
+  class="fieldWrapper"
+  (mouseenter)="firstNameAnimate.moveLabel(1)"
+  (mouseleave)="firstNameAnimate.moveLabel(-1)"
+>
+  <label [class]="firstNameAnimate.labelAnimateCSS" for="firstName"
+    >First Name:</label
+  >
+  <input
+    id="firstName"
+    class="inputBaseStyles"
+    type="text"
+    (focus)="firstNameAnimate.moveLabel(1)"
+    (blur)="firstNameAnimate.moveLabel(-1)"
+    #firstName
+    (keyup)="firstNameAnimate.userInput(firstName.value)"
+  />
+</div>
+
+<!-- Last Name -->
+<div
+  class="fieldWrapper"
+  (mouseenter)="lastNameAnimate.moveLabel(1)"
+  (mouseleave)="lastNameAnimate.moveLabel(-1)"
+>
+  <label [class]="lastNameAnimate.labelAnimateCSS" for="firstName"
+    >Last Name:</label
+  >
+  <input
+    id="firstName"
+    class="inputBaseStyles"
+    type="text"
+    (focus)="lastNameAnimate.moveLabel(1)"
+    (blur)="lastNameAnimate.moveLabel(-1)"
+    #lastName
+    (keyup)="lastNameAnimate.userInput(lastName.value)"
+  />
+</div>
+
+<!-- Address -->
+<div
+  class="fieldWrapper"
+  (mouseenter)="adressAnimate.moveLabel(1)"
+  (mouseleave)="adressAnimate.moveLabel(-1)"
+>
+  <label [class]="adressAnimate.labelAnimateCSS" for="address"
+    >Address 1:</label
+  >
+<textarea
+  name="address"
+  id="address"
+  cols="30"
+  rows="5"
+  class="inputBaseStyles"
+  (focus)="adressAnimate.moveLabel(1)"
+  (blur)="adressAnimate.moveLabel(-1)"
+  #address
+  (keyup)="adressAnimate.userInput(address.value)"
+></textarea>
+</div>
