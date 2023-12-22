@@ -3,7 +3,7 @@
 @tailwind utilities;
 
   .formPanel {
-    @apply m-5 p-5 w-1/2 rounded-md outline outline-1 bg-slate-300;
+    @apply m-5 p-5 w-3/4 rounded-md outline outline-1 bg-slate-300;
   }
   .inputBaseStyles {
     @apply mb-1 px-2 py-1 w-full rounded-md border-b-4 border-slate-800 focus:outline-none;
@@ -17,3 +17,26 @@
   .revertToLabel {
     @apply -translate-y-6 -translate-x-5 scale-75 text-slate-950;
   }
+  .btn {
+    @apply m-2 bg-gradient-to-b py-1 px-2 font-thin rounded-md outline outline-1 shadow-lg shadow-slate-500 hover:shadow-none hover:translate-y-1 duration-200 focus:bg-gradient-to-t focus:shadow-none focus:translate-y-1;
+  }
+
+  .btn-blue {
+    @apply text-white from-blue-400 to-blue-800 outline-blue-950 focus:from-blue-700 focus:to-blue-900;
+  }
+
+  .btn-red {
+    @apply text-white from-red-400 to-red-800 outline-red-950 focus:from-red-700 focus:to-red-900;
+  }
+
+  .btn-green {
+    @apply text-white from-green-400 to-green-800 outline-green-950 focus:from-green-700 focus:to-green-900;
+  }
+
+  .req-text {
+    @apply text-red-700 text-sm font-bold font-sans;
+  }
+  .non-req-text {
+    @apply hidden;
+  }
+  

@@ -12,6 +12,7 @@ export class LabelAnimateService {
   isElementContent: boolean = false;
   inputCharCounter: number = 0;
   // returned label styles called from the getter
+  reqFlag: string = "";
   labelTransStyles: string = "";
 
   /**
@@ -22,9 +23,6 @@ export class LabelAnimateService {
   moveLabel(swtch: number) {
 
     this.labelAnimateCounter = this.labelAnimateCounter + swtch;
-
-    console.log(this.labelAnimateCounter);
-    
 
     if (this.labelAnimateCounter > 0) {
       // move label from field placeholder text to top of field as label
@@ -53,11 +51,25 @@ export class LabelAnimateService {
 
     if (this.animateLabel) {
       this.labelTransStyles = `labelAsPlaceholder revertToLabel`;
+      this.reqFlag = "";
     } else if (!this.animateLabel) {
       this.labelTransStyles = `labelAsPlaceholder`;
+      this.reqFlag = "Required";
     }
 
     return this.labelTransStyles;
+  }
+
+  // remove red asterisk when placeholder become label
+  get requiredToggle(): string {
+
+    if (this.animateLabel) {
+      this.reqFlag = "non-req-text";
+    } else if (!this.animateLabel) {
+      this.reqFlag = "req-text";
+    }
+
+    return this.reqFlag;
   }
 
 /**
@@ -89,5 +101,4 @@ export class LabelAnimateService {
 
     }
   }
-
 }

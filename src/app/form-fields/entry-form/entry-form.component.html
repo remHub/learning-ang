@@ -1,61 +1,116 @@
-<!-- First Name -->
-<div
-  class="fieldWrapper"
-  (mouseenter)="firstNameAnimate.moveLabel(1)"
-  (mouseleave)="firstNameAnimate.moveLabel(-1)"
->
-  <label [class]="firstNameAnimate.labelAnimateCSS" for="firstName"
-    >First Name:</label
-  >
-  <input
-    id="firstName"
-    class="inputBaseStyles"
-    type="text"
-    (focus)="firstNameAnimate.moveLabel(1)"
-    (blur)="firstNameAnimate.moveLabel(-1)"
-    #firstName
-    (keyup)="firstNameAnimate.userInput(firstName.value)"
-  />
-</div>
+<div class="flex flex-col items-center">
+  <div class="formPanel">
+    <!-- Template Driven Forms -->
+    <!-- in order to use forms be sure to import FormsModule in app.module.ts file -->
+    <!-- form element must encapsulate form fields but does not need action attribute -->
+    <!-- add button:type submit -->
+    <!-- To make form template driven add a template variable. -->
+    <!-- Now bind "ngForm" directive to template variable. -->
+    <!-- then add (submit) event and bind to onSubmit() method. -->
+    <!-- Pass template variable as argument to onSubmit method -->
+    <!-- create onSubmit() method in component class -->
+    <!-- Add ngModel directive to each form field so field value will be passed to onSubmit method. -->
+    <!-- next be sure to add name / value attribute to form fields -->
+    <form #entryform="ngForm" (submit)="onSubmit(entryform)">
+      <!-- First Name -->
+      <div
+        class="fieldWrapper"
+        (mouseenter)="firstNameAnimate.moveLabel(1)"
+        (mouseleave)="firstNameAnimate.moveLabel(-1)"
+      >
+        <label [class]="firstNameAnimate.labelAnimateCSS" for="firstName"
+          ><span [class]="firstNameAnimate.requiredToggle">*</span>First
+          Name:</label
+        >
+        <input
+          id="firstName"
+          class="inputBaseStyles"
+          type="text"
+          name="firstName"
+          ngModel
+          (focus)="firstNameAnimate.moveLabel(1)"
+          (blur)="firstNameAnimate.moveLabel(-1)"
+          #firstName="ngModel"
+          (keyup)="firstNameAnimate.userInput(firstName.value)"
+          required
+        />
+      </div>
 
-<!-- Last Name -->
-<div
-  class="fieldWrapper"
-  (mouseenter)="lastNameAnimate.moveLabel(1)"
-  (mouseleave)="lastNameAnimate.moveLabel(-1)"
->
-  <label [class]="lastNameAnimate.labelAnimateCSS" for="firstName"
-    >Last Name:</label
-  >
-  <input
-    id="firstName"
-    class="inputBaseStyles"
-    type="text"
-    (focus)="lastNameAnimate.moveLabel(1)"
-    (blur)="lastNameAnimate.moveLabel(-1)"
-    #lastName
-    (keyup)="lastNameAnimate.userInput(lastName.value)"
-  />
-</div>
+      <!-- Last Name -->
+      <div
+        class="fieldWrapper"
+        (mouseenter)="lastNameAnimate.moveLabel(1)"
+        (mouseleave)="lastNameAnimate.moveLabel(-1)"
+      >
+        <label [class]="lastNameAnimate.labelAnimateCSS" for="lastName"
+          ><span [class]="lastNameAnimate.requiredToggle">*</span>Last
+          Name:</label
+        >
+        <input
+          id="firstName"
+          class="inputBaseStyles"
+          type="text"
+          name="lastName"
+          ngModel
+          (focus)="lastNameAnimate.moveLabel(1)"
+          (blur)="lastNameAnimate.moveLabel(-1)"
+          #lastName="ngModel"
+          (keyup)="lastNameAnimate.userInput(lastName.value)"
+          required
+        />
+      </div>
 
-<!-- Address -->
-<div
-  class="fieldWrapper"
-  (mouseenter)="adressAnimate.moveLabel(1)"
-  (mouseleave)="adressAnimate.moveLabel(-1)"
->
-  <label [class]="adressAnimate.labelAnimateCSS" for="address"
-    >Address 1:</label
-  >
-<textarea
-  name="address"
-  id="address"
-  cols="30"
-  rows="5"
-  class="inputBaseStyles"
-  (focus)="adressAnimate.moveLabel(1)"
-  (blur)="adressAnimate.moveLabel(-1)"
-  #address
-  (keyup)="adressAnimate.userInput(address.value)"
-></textarea>
+      <!-- email -->
+      <div
+        class="fieldWrapper"
+        (mouseenter)="emailAnimate.moveLabel(1)"
+        (mouseleave)="emailAnimate.moveLabel(-1)"
+      >
+        <label [class]="emailAnimate.labelAnimateCSS" for="email"
+          ><span [class]="emailAnimate.requiredToggle">*</span>Email:</label
+        >
+        <input
+          id="email"
+          class="inputBaseStyles"
+          type="text"
+          name="email"
+          ngModel
+          (focus)="emailAnimate.moveLabel(1)"
+          (blur)="emailAnimate.moveLabel(-1)"
+          #email="ngModel"
+          (keyup)="emailAnimate.userInput(email.value)"
+          required
+        />
+      </div>
+
+      <!-- Address -->
+      <div
+        class="fieldWrapper"
+        (mouseenter)="addressAnimate.moveLabel(1)"
+        (mouseleave)="addressAnimate.moveLabel(-1)"
+      >
+        <label [class]="addressAnimate.labelAnimateCSS" for="address"
+          ><span [class]="addressAnimate.requiredToggle">*</span>Address:</label
+        >
+        <textarea
+          name="address"
+          id="address"
+          cols="30"
+          rows="5"
+          class="inputBaseStyles"
+          name="address"
+          ngModel
+          (focus)="addressAnimate.moveLabel(1)"
+          (blur)="addressAnimate.moveLabel(-1)"
+          #address="ngModel"
+          (keyup)="addressAnimate.userInput(address.value)"
+          required
+        ></textarea>
+      </div>
+      <div class="flex flex-row justify-between items-end">
+        <button class="btn btn-blue" type="submit">Submit</button>
+        <h1 class="req-text">*Required</h1>
+      </div>
+    </form>
+  </div>
 </div>
