@@ -15,7 +15,7 @@
     @apply absolute top-0 left-2 text-xl transition duration-300 text-slate-400;
   }
   .revertToLabel {
-    @apply -translate-y-6 -translate-x-5 scale-75 text-slate-950;
+    @apply -translate-y-6 -translate-x-5 scale-75 text-slate-950 transform-gpu;
   }
   .btn {
     @apply m-2 bg-gradient-to-b py-1 px-2 font-thin rounded-md outline outline-1 shadow-lg shadow-slate-500 hover:shadow-none hover:translate-y-1 duration-200 focus:bg-gradient-to-t focus:shadow-none focus:translate-y-1;
@@ -34,9 +34,12 @@
   }
 
   .req-text {
-    @apply text-red-700 text-sm font-bold font-sans;
+    @apply text-red-700 text-base font-bold font-sans;
   }
-  .non-req-text {
+  .req-ast {
+    @apply text-red-700 text-xl font-bold font-sans;
+  }
+  .non-req-ast {
     @apply hidden;
   }
   

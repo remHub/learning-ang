@@ -64,9 +64,9 @@ export class LabelAnimateService {
   get requiredToggle(): string {
 
     if (this.animateLabel) {
-      this.reqFlag = "non-req-text";
+      this.reqFlag = "non-req-ast";
     } else if (!this.animateLabel) {
-      this.reqFlag = "req-text";
+      this.reqFlag = "req-ast";
     }
 
     return this.reqFlag;
